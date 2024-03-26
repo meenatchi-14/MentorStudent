@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const objId = require("mongoose").Types.ObjectId;
+
 
 const { student, mentor } = require("../db.js");
 
@@ -31,5 +31,6 @@ router.post("/newMentor", async (req, res) => {
   }
 });
 
+module.exports = router;
 // ------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@ require("dotenv").config();
 const { dbConnect } = require("./db.js");
 const studentRoute = require("./routes/student.js");
 const mentorRoute = require("./routes/mentor.js");
-const assignMentortoStudent = require("./routes/assign.js");
+const assignRoute = require("./routes/assign.js");
 
 const app = express();
 
@@ -18,9 +18,9 @@ app.get("/all", (req, res) => {
 });
 app.use("/student",studentRoute);
 app.use("/mentor",mentorRoute);
-app.use("/assignmentor",assignMentortoStudent);
+app.use("/assignmentor",assignRoute);
 
-app.listen(8100, async (err) => {
+app.listen(8111, async (err) => {
   await dbConnect();
   console.log("Started server ");
   if (err) {
